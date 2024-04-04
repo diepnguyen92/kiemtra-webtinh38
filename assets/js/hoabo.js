@@ -1,5 +1,22 @@
 const data = [
   {
+    id: 1,
+    name: "Vì Tinh Tú",
+    price: "750,000",
+    image:
+      "https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg",
+    title: "Hoa tuoi",
+    coment:
+      "Vì Tinh Tú - Giỏ hoa xinh mix hài hòa giữa hồng shimmer và hồng kem dâu tạo nên 1 giỏ hoa màu sắc bắt mắt lẫn chất lượng tuyệt hảo.",
+    content: `Giỏ hoa Vì Tinh Tú bao gồm:
+
+      Hồng Shimmer
+      Hồng kem dâu
+      Lan tường hồng
+      Thúy châu
+      Hoa lá và phụ kiện khác`,
+  },
+  {
     id: 2,
     name: "Mặt trời mộng mơ",
     price: "850,000",
@@ -112,6 +129,25 @@ const data = [
     Hoa lá và phụ kiện khác`,
   },
   {
+    id: 47,
+    name: "Đừng quên tên anh",
+    price: "1,650,000",
+    image: "https://img.mayflower.vn/2018/10/dung-quen-ten-anh-1-2-247x296.jpg",
+    title: "Hoa tuoi",
+    category: "new",
+    coment:
+      "Đừng quên tên anh – Giỏ hoa kết hợp hoàn hảo giữa tone màu vàng kem, xnah dương và hồng tạo nên một giỏ hoa đặc biệt thu hút mọi ánh nhìn.",
+    content: `Giỏ hoa Đừng quên tên anh bao gồm:
+
+    Cẩm nhập
+    Ngọc trai
+    Mikoto
+    Lan hồ điệp
+    Lan tường
+    Tulip
+    Hoa lá và phụ kiện khác`,
+  },
+  {
     id: 8,
     name: "Ngôi Sao cô đơn",
     price: "1,250,000",
@@ -121,6 +157,42 @@ const data = [
     coment:
       "Ngôi Sao cô đơn – Giỏ hoa kết hợp hoàn hảo giữa tone màu vàng kem, xnah dương và hồng tạo nên một giỏ hoa đặc biệt thu hút mọi ánh nhìn.",
     content: `Giỏ hoa Ngôi Sao cô đơn bao gồm:
+
+    Cẩm nhập
+    Ngọc trai
+    Mikoto
+    Lan hồ điệp
+    Lan tường
+    Tulip
+    Hoa lá và phụ kiện khác`,
+  },
+  {
+    id: 9,
+    name: "Cột dây tơ duyên",
+    price: "1,350,000",
+    image: "https://img.mayflower.vn/2022/09/cot-day-to-duyen-247x296.jpg",
+    title: "Hoa tuoi",
+    coment:
+      "Cột dây tơ duyên – Giỏ hoa kết hợp hoàn hảo giữa tone màu vàng kem, xnah dương và hồng tạo nên một giỏ hoa đặc biệt thu hút mọi ánh nhìn.",
+    content: `Giỏ hoa Cột dây tơ duyên bao gồm:
+
+    Cẩm nhập
+    Ngọc trai
+    Mikoto
+    Lan hồ điệp
+    Lan tường
+    Tulip
+    Hoa lá và phụ kiện khác`,
+  },
+  {
+    id: 10,
+    name: "Yêu xa",
+    price: "550,000",
+    image: "https://img.mayflower.vn/2018/08/yeu-xa-2-247x296.jpg",
+    title: "Hoa tuoi",
+    coment:
+      "Yêu xa – Giỏ hoa kết hợp hoàn hảo giữa tone màu vàng kem, xnah dương và hồng tạo nên một giỏ hoa đặc biệt thu hút mọi ánh nhìn.",
+    content: `Giỏ hoa Yêu xa bao gồm:
 
     Cẩm nhập
     Ngọc trai
@@ -152,7 +224,6 @@ const data = [
     image:
       "https://product.hstatic.net/200000427529/product/9fae23e2-9477-45fc-ac3b-bb1fa588b55a_7a80492b886f45aa807c1a8b342df5fb_master.jpg",
     title: "Hoa Sap",
-    category: "new",
     coment:
       "Bó 100 bông hồng đỏ - tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
     content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
@@ -216,6 +287,75 @@ const data = [
     coment:
       "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
     content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
+    990 bông hồng sáp nhập khẩu
+    Baby
+    Một số phụ kiện khác`,
+  },
+
+  {
+    id: 18,
+    name: "Bó Hoa Hồng Sáp Baby",
+    price: "1,800,000",
+    image:
+      "https://product.hstatic.net/200000427529/product/aaa856db-caba-441a-9d21-0298b72d9b92_96868dc692944472a5445f48517e64e0_master.jpg",
+    title: "Hoa Sap",
+    coment:
+      "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
+    content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
+    990 bông hồng sáp nhập khẩu
+    Baby
+    Một số phụ kiện khác`,
+    coment:
+      "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
+    content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
+    990 bông hồng sáp nhập khẩu
+    Baby
+    Một số phụ kiện khác`,
+  },
+  {
+    id: 19,
+    name: "Pink Girl - HST19",
+    price: "1,600,000",
+    image:
+      "https://product.hstatic.net/200000427529/product/7872e78c-4864-424b-bfec-6f3c135b1b55_f21e94648b2e46428a542f164e301162_master.jpg",
+    title: "Hoa Sap",
+    coment:
+      "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
+    content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
+    990 bông hồng sáp nhập khẩu
+    Baby
+    Một số phụ kiện khác`,
+  },
+  {
+    id: 20,
+    name: "Vòng Tròn Tình Yêu",
+    price: "1,500,000",
+    image:
+      "https://product.hstatic.net/200000427529/product/4e17951c-4c0d-45ee-95c9-542fba3a78bc_b9b3db143c074b57b80ffd4a316766b2_master.jpg",
+    title: "Hoa Sap",
+    coment:
+      "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
+    content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
+    990 bông hồng sáp nhập khẩu
+    Baby
+    Một số phụ kiện khác`,
+  },
+  {
+    id: 20,
+    name: "Tình Yêu Vĩnh Cửu",
+    price: "1,400,000",
+    image:
+      "https://product.hstatic.net/200000427529/product/6fea66ce-3c8b-4394-b0c0-61b9a7392ae1_94a9ade86d014f8184349fc74e0d4ce0_master.jpg",
+    title: "Hoa Sap",
+    coment:
+      "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
+    content: `Bó hồng Bó 100 bông hồng đỏ bao gồm:
+
     990 bông hồng sáp nhập khẩu
     Baby
     Một số phụ kiện khác`,
@@ -624,14 +764,12 @@ const data = [
 ];
 
 // truy cập phần tử
-let rowJsHt = document.querySelector(".row-js-ht");
-let rowJsHs = document.querySelector(".row-js-hs");
-let rowjsHsn = document.querySelector(".row-js-hsn");
+
+
 let rowJsHkt = document.querySelector(".row-js-hb");
-let rowJsHl = document.querySelector(".row-js-hl");
+
 // try cập phần tử tab listing
-let rowHot = document.querySelector(".row-js-hot");
-let rowNew = document.querySelector(".row-js-new");
+
 // lọc tittle
 const getData = (list, value) => {
   return list.filter((item) => {
@@ -646,15 +784,13 @@ const getDataHn = (list, value) => {
   });
 };
 // console.log(getDataHn(data,"hot"));
-const listDataHt = getData(data, "Hoa tuoi");
+
 // console.log(listDataHt);
-const listDataHs = getData(data, "Hoa Sap");
-const listDataHsn = getData(data, "Hoa Gio");
+
 const listDataHkt = getData(data, "Hoa bo");
-const listDataHl = getData(data, "Lang hoa");
+
 // sp hot, new
-const listDataHot = getDataHn(data, "hot");
-const listDataNew = getDataHn(data, "new");
+
 // render data => HTML
 const renderData = (listData) => {
   let HTML = ``;
@@ -679,11 +815,9 @@ const renderData = (listData) => {
   return HTML;
 };
 
-rowJsHt.innerHTML = renderData(listDataHt);
-rowJsHs.innerHTML = renderData(listDataHs);
-rowjsHsn.innerHTML = renderData(listDataHsn);
+
 rowJsHkt.innerHTML = renderData(listDataHkt);
-rowJsHl.innerHTML = renderData(listDataHl);
+
 
 const renderDataHot = (listData) => {
   let HTMLH = ``;
@@ -711,8 +845,7 @@ const renderDataHot = (listData) => {
 
 
 
-rowHot.innerHTML = renderDataHot(listDataHot);
-rowNew.innerHTML = renderDataHot(listDataNew);
+
 // truy cập sp bán chạy, new
 let btnListing = document.querySelectorAll(".btn-listing");
 let tabContent = document.querySelectorAll(".tab-content");
