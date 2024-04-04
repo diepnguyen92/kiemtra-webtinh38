@@ -384,8 +384,13 @@ color: #fff;}
 justify-content: space-between;
 font-size: 20px;}
 .wrap-hearder {margin-bottom: 20px;}
+.menu-total .container {display: flex;
+position: relative;
+}
+
 .menu ul {display: flex;
 align-items: center;
+margin-bottom: 0;
 }
 .menu ul li {
 font-size: 20px;
@@ -400,7 +405,10 @@ display: inline block;} */
     position: sticky;
     z-index: 999;
     top: 0;
-    padding-top: 15px;}
+padding-top: 25px;
+padding-bottom: 25px;
+}
+    
 
 
 
@@ -660,7 +668,10 @@ object-fit: cover;
 .advantage-main {text-align: center;
 margin-bottom: 20px;}
 .content li {list-style-type: none;
-margin-left: 0;}
+margin-left: 0;
+font-size: 16px;
+font-family: 'Roboto';}
+iframe {margin-top: 10px;}
 .content ul {margin-top: 20px;
 padding-left: 0;}
 .content ul li i {margin-left: 10px;}
@@ -691,6 +702,7 @@ color: var(--text-color2);}
     font-size: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);}
     /* tạo hiệu ứng cho hotline */
+    
    .listing-product .row {display: flex;}
    .fillter {font-size: 20px;
     padding: 5px 10px;
@@ -741,9 +753,11 @@ font-size: 14px;
     height: auto;
     margin-bottom: 30px;}
 .baner img {width: 100%;
-object-fit: cover;
-    }
+object-fit: cover;}
 
+.hotline {position: absolute;
+right: 20px;
+}
 /* responsive */
 @media screen and (max-width: 1200px){
     .hotline {display: none;}
@@ -857,12 +871,23 @@ margin-left: 0;}
     }
     .tab-content .content {height: auto;
     font-size: 12px;}
-}
-@media screen and (max-width: 575px){
     .btn-listing {font-size: 12px;
         padding: 8px 10px;
-    }
+    }}
+@media screen and (max-width: 426px){
+.mesenger {width: 70px;
+height: 35px;
+font-size: 20px;}
+.mesenger-main {width: 300px;
+height: 500px;}
+.mesenger-header {font-size: 14px;}
+.mesenger-main input {font-size: 14px;}
+
+
 }
+    
+
+
 
 @media screen and (max-width: 330px){
     .cart-modal {width: 100%;}
@@ -872,7 +897,14 @@ margin-left: 0;}
     .cart-price {font-size: 12px;}
     .product-quantity {width: 30px;
         font-size: 12px;
-        margin-left: 6px;}}
+        margin-left: 6px;}
+    .bag i {font-size: 16px;}
+    .bar1, .bar2, .bar3 {
+        width: 25px;
+        height: 3px;}
+    .menu-total {padding: 5px;}
+
+    }
 #back-to-top{
     width: 30px;
     height: 30px;
