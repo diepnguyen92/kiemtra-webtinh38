@@ -793,7 +793,7 @@ const renderData = (listData) => {
   let HTML = ``;
   listData.forEach((item) => {
     HTML += `
-      <div class="col-12 col-sm-6 col-md-3">
+      <div class="col-12 col-sm-6 col-md-4">
         <div class="content">
           <a href="./defaut1.html?id=${item.id}" target="_blank">
           <img class="image" src="${item.image}" alt="${item.name}"></a>
@@ -1254,3 +1254,110 @@ backTop.addEventListener('click', ()=>{
     top: 0,
     behavior: 'smooth'});
 })
+// fillter by price
+// triu cập phần tử
+const input500K = document.querySelector("#under500k")
+const input1Mil = document.querySelector("#up500k")
+const inputUp1mil = document.querySelector("#up1mil")
+const inputUp2mil = document.querySelector("#upto2mil")
+// console.log(inputUp2mil);
+// lọc sản phẩm 
+const fillterByPrice = (data, minPrice, maxPrice, element) =>{
+  return data.filter(item =>{
+    const price = parseFloat(item.price.replace(/,/g, ""));
+   return price >= minPrice && price< maxPrice && item.title == element;
+  })
+}
+// console.log(fillterByPrice(data, 0 , 1000000, "Hoa tuoi"))
+// khoảng giá dưới 500k
+input500K.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listData500k = fillterByPrice(data, 0, 500000, "Hoa Sap")
+    rowJsHs.innerHTML = renderData(listData500k)
+  }
+  else {rowJsHs.innerHTML = renderData(listDataHs)}
+})
+// khoảng giá  500k -1tr
+input1Mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listData1Mil = fillterByPrice(data, 500000, 1000000, "Hoa Sap")
+    rowJsHs.innerHTML = renderData(listData1Mil)
+  }
+  else {rowJsHs.innerHTML = renderData(listDataHs)}
+})
+// khoảng giá  1tr -2tr
+inputUp1mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listDataUp1Mil = fillterByPrice(data, 1000000, 2000000, "Hoa Sap")
+    rowJsHs.innerHTML = renderData(listDataUp1Mil)
+  }
+  else {rowJsHs.innerHTML = renderData(listDataHs)}
+})
+// khoảng giá  >2tr
+inputUp2mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listDataUp2Mil = fillterByPrice(data, 2000000, 200000000, "Hoa Sap")
+    rowJsHs.innerHTML = renderData(listDataUp2Mil)
+  }
+  else {rowJsHs.innerHTML = renderData(listDataHs)}
+})
+
+
+
+
+
+
+
+
+// Duyệt check box chỉ được chọn 1.
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+// Lặp qua từng checkbox và thêm sự kiện change
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    // Nếu checkbox này được chọn, loại bỏ trạng thái chọn của các checkbox khác
+    if (this.checked) {
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== this) {
+          otherCheckbox.checked = false;
+        }
+      });
+    }
+  });
+});
+// sắp sếp lại theo thứ tự
+const sortByData = (listData, order)=>{
+  return listData.sort((a,b)=>{
+    let priceA = parseFloat(a.price.replace(/,/g, ''));
+    let priceB = parseFloat(b.price.replace(/,/g, ''));
+    if (order === 'ascending') {
+      return priceA - priceB;
+    } else {
+      return priceB - priceA;
+    }
+  })
+}
+// console.log(sortByData(data,'ascending'));
+const customSelect = document.getElementById("custom-select");
+customSelect.addEventListener('change',(event)=>{
+  const selectOption = event.target.value;
+  let sortData = [];
+  if (selectOption==='price-ascending'){
+    sortData = sortByData(data, 'ascending');}
+  else if (selectOption==='price-descending'){
+  sortData = sortByData(data,'descending')}
+  else if (selectOption==='custom'){
+    sortData = listDataHs}
+    else {
+      sortData= listDataHs
+    }
+rowJsHs.innerHTML = renderData(sortData);
+  });

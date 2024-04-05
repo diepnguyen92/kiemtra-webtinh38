@@ -405,25 +405,25 @@ display: inline block;} */
     position: sticky;
     z-index: 999;
     top: 0;
-padding-top: 25px;
-padding-bottom: 25px;
+padding-top: 15px;
+padding-bottom: 15px;
 }
     
-.see-more {width: 250px;
-height: 50px;
+.see-more {width: 200px;
+height: 40px;
 margin: auto;
 border: 1px solid var(--text-color2);
 display: flex;
 align-items: center;
 justify-content: center;
 margin-bottom: 20px;
-font-size: 20px;
+font-size: 16px;
 font-family: 'Roboto';
 border-radius: 5px;
-padding: 10px 15px;
+padding: 10px 10px;
 }
 .see-more a {color: var(--text-color2);}
-
+.see-more:hover {transform: scale(1.1);}
 
 /* baner slide */
 .baner-slide {width: 100%;
@@ -769,8 +769,38 @@ font-size: 14px;
 object-fit: cover;}
 
 .hotline {position: absolute;
-right: 20px;
+right: 20px;}
+/* fillter by price */
+.setup-filterprice {display: flex;}
+.product-main {width: 100%;}
+.fillter-Price {width: 22%;
+height: 250px;
+margin-top: 10px;
+font-size: 14px;
+font-family: 'Roboto';
+border: 1px solid rgba(0, 0, 0, .1);
+border-radius: 5px;
+padding-left: 5px;
 }
+.fillter-Price p {font-size: 20px;
+font-family: "Pacifico";
+color: var(--text-color2);}
+.check-price {margin-top: 5px;}
+.fillter-Price select {width: 90%;
+padding: 5px 10px;
+border-radius: 5px;
+outline: none;}
+/* tin tuc bai viet */
+.new-posts .content:hover {border: none;}
+.posts-image {width: 100%;}
+.posts-image img {object-fit: cover;
+max-width: 100%;
+height: 250px;
+border-radius: 10px;
+margin-bottom: 10px;}
+.posts-image img:hover {transform: none;}
+
+
 /* responsive */
 @media screen and (max-width: 1200px){
     .hotline {display: none;}

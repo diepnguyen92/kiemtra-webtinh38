@@ -187,7 +187,7 @@ const data = [
   {
     id: 10,
     name: "Yêu xa",
-    price: "550,000",
+    price: "450,000",
     image: "https://img.mayflower.vn/2018/08/yeu-xa-2-247x296.jpg",
     title: "Hoa tuoi",
     coment:
@@ -761,17 +761,32 @@ const data = [
   Tuyết mai
   Một số lá và phụ kiện khác`,
   },
+  {
+    id: 48,
+    name: "Niềm Hạnh Phúc",
+    price: "2,100,000",
+    image:"https://img.mayflower.vn/2023/11/5500k2-247x296.jpg",
+    title: "Hoa tuoi",
+    coment:
+      "Niềm Hạnh Phúc – Những bông cúc mẫu đơn to, tròn, đong đầy sự biết ơn. Tặng kèm thiệp xinh, in ảnh lên thiệp theo yêu cầu.",
+    content: `Bó hoa Niềm Hạnh Phúc bao gồm:
+
+  3 bông cúc mẫu đơn trắng
+  Green wicky
+  Phi yến trắng
+  Pingpong trắng
+  Calimero xanh
+  Tuyết mai
+  Một số lá và phụ kiện khác`,
+  },
+
+
+
 ];
 
 // truy cập phần tử
-let rowJsHt = document.querySelector(".row-js-ht");
-let rowJsHs = document.querySelector(".row-js-hs");
-let rowjsHsn = document.querySelector(".row-js-hsn");
-let rowJsHkt = document.querySelector(".row-js-hb");
-let rowJsHl = document.querySelector(".row-js-hl");
-// try cập phần tử tab listing
-let rowHot = document.querySelector(".row-js-hot");
-let rowNew = document.querySelector(".row-js-new");
+let rowJsHl = document.querySelector(".row-js-ht");
+
 // lọc tittle
 const getData = (list, value) => {
   return list.filter((item) => {
@@ -786,21 +801,17 @@ const getDataHn = (list, value) => {
   });
 };
 // console.log(getDataHn(data,"hot"));
-const listDataHt = getData(data, "Hoa tuoi");
+const listDataHl = getData(data, "Hoa tuoi");
 // console.log(listDataHt);
-const listDataHs = getData(data, "Hoa Sap");
-const listDataHsn = getData(data, "Hoa Gio");
-const listDataHkt = getData(data, "Hoa bo");
-const listDataHl = getData(data, "Lang hoa");
+
 // sp hot, new
-const listDataHot = getDataHn(data, "hot");
-const listDataNew = getDataHn(data, "new");
+
 // render data => HTML
 const renderData = (listData) => {
   let HTML = ``;
   listData.forEach((item) => {
     HTML += `
-      <div class="col-12 col-sm-6 col-md-3">
+      <div class="col-12 col-sm-6 col-md-4">
         <div class="content">
           <a href="./defaut1.html?id=${item.id}" target="_blank">
           <img class="image" src="${item.image}" alt="${item.name}"></a>
@@ -819,11 +830,8 @@ const renderData = (listData) => {
   return HTML;
 };
 
-rowJsHt.innerHTML = renderData(listDataHt);
-rowJsHs.innerHTML = renderData(listDataHs);
-rowjsHsn.innerHTML = renderData(listDataHsn);
-rowJsHkt.innerHTML = renderData(listDataHkt);
 rowJsHl.innerHTML = renderData(listDataHl);
+
 
 const renderDataHot = (listData) => {
   let HTMLH = ``;
@@ -851,8 +859,7 @@ const renderDataHot = (listData) => {
 
 
 
-rowHot.innerHTML = renderDataHot(listDataHot);
-rowNew.innerHTML = renderDataHot(listDataNew);
+
 // truy cập sp bán chạy, new
 let btnListing = document.querySelectorAll(".btn-listing");
 let tabContent = document.querySelectorAll(".tab-content");
@@ -1280,10 +1287,119 @@ function showProduct(category) {
 // cuộn lên đầu trang
 // truy cập nút
 const backTop = document.getElementById("back-to-top")
-console.log(backTop);
+// console.log(backTop);
 // sự kiện click
 backTop.addEventListener('click', ()=>{
   window.scrollTo({
     top: 0,
     behavior: 'smooth'});
 })
+
+
+// fillter by price
+// triu cập phần tử
+const input500K = document.querySelector("#under500k")
+const input1Mil = document.querySelector("#up500k")
+const inputUp1mil = document.querySelector("#up1mil")
+const inputUp2mil = document.querySelector("#upto2mil")
+// console.log(inputUp2mil);
+// lọc sản phẩm 
+const fillterByPrice = (data, minPrice, maxPrice, element) =>{
+  return data.filter(item =>{
+    const price = parseFloat(item.price.replace(/,/g, ""));
+   return price >= minPrice && price< maxPrice && item.title == element;
+  })
+}
+// console.log(fillterByPrice(data, 0 , 1000000, "Hoa tuoi"))
+// khoảng giá dưới 500k
+input500K.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listData500k = fillterByPrice(data, 0, 500000, "Hoa tuoi")
+    rowJsHl.innerHTML = renderData(listData500k)
+  }
+  else {rowJsHl.innerHTML = renderData(listDataHl)}
+})
+// khoảng giá  500k -1tr
+input1Mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listData1Mil = fillterByPrice(data, 500000, 1000000, "Hoa tuoi")
+    rowJsHl.innerHTML = renderData(listData1Mil)
+  }
+  else {rowJsHl.innerHTML = renderData(listDataHl)}
+})
+// khoảng giá  1tr -2tr
+inputUp1mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listDataUp1Mil = fillterByPrice(data, 1000000, 2000000, "Hoa tuoi")
+    rowJsHl.innerHTML = renderData(listDataUp1Mil)
+  }
+  else {rowJsHl.innerHTML = renderData(listDataHl)}
+})
+// khoảng giá  >2tr
+inputUp2mil.addEventListener("change",(event)=>{
+  const isChecked = event.target.checked;
+  // console.log(isChecked);
+  if(isChecked){
+    const listDataUp2Mil = fillterByPrice(data, 2000000, 200000000, "Hoa tuoi")
+    rowJsHl.innerHTML = renderData(listDataUp2Mil)
+  }
+  else {rowJsHl.innerHTML = renderData(listDataHl)}
+})
+
+
+
+
+
+
+
+
+// Duyệt check box chỉ được chọn 1.
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+// Lặp qua từng checkbox và thêm sự kiện change
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    // Nếu checkbox này được chọn, loại bỏ trạng thái chọn của các checkbox khác
+    if (this.checked) {
+      checkboxes.forEach(otherCheckbox => {
+        if (otherCheckbox !== this) {
+          otherCheckbox.checked = false;
+        }
+      });
+    }
+  });
+});
+// sắp sếp lại theo thứ tự
+const sortByData = (listData, order)=>{
+  return listData.sort((a,b)=>{
+    let priceA = parseFloat(a.price.replace(/,/g, ''));
+    let priceB = parseFloat(b.price.replace(/,/g, ''));
+    if (order === 'ascending') {
+      return priceA - priceB;
+    } else {
+      return priceB - priceA;
+    }
+  })
+}
+// console.log(sortByData(data,'ascending'));
+const customSelect = document.getElementById("custom-select");
+customSelect.addEventListener('change',(event)=>{
+  const selectOption = event.target.value;
+  let sortData = [];
+  if (selectOption==='price-ascending'){
+    sortData = sortByData(data, 'ascending');}
+  else if (selectOption==='price-descending'){
+  sortData = sortByData(data,'descending')}
+  else if (selectOption==='custom'){
+    sortData = listDataHl}
+    else {
+      sortData= listDataHl
+    }
+rowJsHl.innerHTML = renderData(sortData);
+  });
